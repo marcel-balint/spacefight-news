@@ -1,10 +1,10 @@
 import React from "react";
 import ArticleList from "./ArticleList";
 
-const HomePage = ({ articles }) => {
+const HomePage = ({ articles, changePge, page }) => {
   return (
     <>
-      <ArticleList articles={articles} />
+      <ArticleList articles={articles} changPage={changePge} page={page} />
     </>
   );
 };
