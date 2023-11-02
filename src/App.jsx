@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
+import ArticleDetails from "./components/ArticleDetails";
+
+import "./App.css";
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -30,7 +33,15 @@ function App() {
   };
   return (
     <>
-      <HomePage articles={articles} changePge={changePge} page={page} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomePage articles={articles} changePge={changePge} page={page} />
+          }
+        />
+        <Route path="/article/:id" element={<ArticleDetails />} />
+      </Routes>
     </>
   );
 }

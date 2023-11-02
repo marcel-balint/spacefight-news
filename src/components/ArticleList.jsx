@@ -1,5 +1,6 @@
 import React from "react";
 import Article from "./Article";
+import { Link } from "react-router-dom";
 
 const ArticleList = ({ articles, changPage, page }) => {
   const number = page;
@@ -9,7 +10,10 @@ const ArticleList = ({ articles, changPage, page }) => {
   return (
     <div className="article-list">
       {articles?.map((el) => (
-        <Article key={el.id} article={el} />
+        <Link to={`/article/${el.id}`} key={el.id}>
+          {" "}
+          <Article article={el} />
+        </Link>
       ))}
       <div className="pagination-bts">
         <button onClick={() => changPage("prev")}>prev</button>
