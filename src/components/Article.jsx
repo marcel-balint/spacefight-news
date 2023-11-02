@@ -1,8 +1,10 @@
 import React from "react";
 
+import "./Article.css";
+
 const Article = ({ article }) => {
   return (
-    <div>
+    <div className="article-box">
       <div className="image">
         <img
           src={article.imageUrl}
